@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String        @id @default(uuid())
+  email         String        @unique
+  password      String
+  firstName     String
+  lastName      String
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  applications  Application[]
+  documents     Document[]
+
+  @@map("users")
+}
+
+enum ApplicationStatus {
+  WISHLIST
+  APPLIED
+  INTERVIEW
+  OFFER
+  REJECTED
+  ACCEPTED
+  WITHDRAWN
+}
+
+model Application {
+  id              String            @id @default(uuid())
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  companyName     String
+  jobTitle        String
+  jobDescription  String?
+  jobUrl          String?
+  location        String?
+  salary          String?
+  
+  status          ApplicationStatus @default(APPLIED)
+  appliedDate     DateTime          @default(now())
+  
+  notes           String?
+  color           String?           @default("#3b82f6")
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  interviews      Interview[]
+  contacts        Contact[]
+  activities      Activity[]
+
+  @@map("applications")
+  @@index([userId, status])
+  @@index([userId, appliedDate])
+}
+
+model Interview {
+  id              String      @id @default(uuid())
+  applicationId   String
+  application     Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  
+  title           String
+  type            String      // Phone, Video, Onsite, Technical
+  scheduledAt     DateTime
+  duration        Int?        // in minutes
+  location        String?
+  meetingLink     String?
+  notes           String?
+  completed       Boolean     @default(false)
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("interviews")
+  @@index([applicationId])
+  @@index([scheduledAt])
+}
+
+model Contact {
+  id              String      @id @default(uuid())
+  applicationId   String
+  application     Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  
+  name            String
+  role            String?
+  email           String?
+  phone           String?
+  linkedin        String?
+  notes           String?
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("contacts")
+  @@index([applicationId])
+}
+
+model Activity {
+  id              String      @id @default(uuid())
+  applicationId   String
+  application     Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  
+  type            String      // status_change, note_added, interview_scheduled, etc.
+  description     String
+  metadata        Json?
+  
+  createdAt       DateTime    @default(now())
+
+  @@map("activities")
+  @@index([applicationId, createdAt])
+}
+
+model Document {
+  id              String      @id @default(uuid())
+  userId          String
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name            String
+  type            String      // resume, cover_letter, portfolio, etc.
+  fileUrl         String
+  fileSize        Int
+  mimeType        String
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("documents")
+  @@index([userId])
+}
