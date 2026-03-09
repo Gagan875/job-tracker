@@ -1,4 +1,4 @@
-# Job Application Tracker 🎯
+# Job Application Tracker
 
 A production-ready full-stack application to track job applications, manage interviews, and organize your job search process efficiently.
 
@@ -8,28 +8,28 @@ A production-ready full-stack application to track job applications, manage inte
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-- 📝 **Application Tracking** - Track applications across multiple stages (Wishlist, Applied, Interview, Offer, etc.)
-- 📅 **Interview Management** - Schedule and track interviews with detailed information
-- 👥 **Contact Management** - Store recruiter and hiring manager contacts
-- 📊 **Analytics Dashboard** - Visual insights into your job search progress
-- 🔍 **Search & Filter** - Quickly find applications by company, title, or status
-- 📝 **Notes & Activities** - Keep detailed notes and automatic activity timeline
-- 🔐 **Secure Authentication** - JWT-based authentication with bcrypt password hashing
-- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- **Application Tracking** - Track applications across multiple stages (Wishlist, Applied, Interview, Offer, etc.)
+- **Interview Management** - Schedule and track interviews with detailed information
+- **Contact Management** - Store recruiter and hiring manager contacts
+- **Analytics Dashboard** - Visual insights into your job search progress
+- **Search & Filter** - Quickly find applications by company, title, or status
+- **Notes & Activities** - Keep detailed notes and automatic activity timeline
+- **Secure Authentication** - JWT-based authentication with bcrypt password hashing
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 
 ### Technical Features
-- ⚡ Real-time updates with React Query
-- 🎨 Modern UI with Tailwind CSS
-- 🔄 Optimistic updates for better UX
-- 🐳 Docker containerization
-- 📦 Type-safe API with TypeScript
-- 🗄️ PostgreSQL with Prisma ORM
-- ✅ Input validation and error handling
+- Real-time updates with React Query
+- Modern UI with Tailwind CSS
+- Optimistic updates for better UX
+- Docker containerization
+- Type-safe API with TypeScript
+- PostgreSQL with Prisma ORM
+- Input validation and error handling
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Docker (Recommended)
 
@@ -57,7 +57,7 @@ docker-compose up
 
 See [SETUP.md](SETUP.md) for detailed manual installation instructions.
 
-## 📚 Documentation
+## Documentation
 
 - [Get Started Guide](GET_STARTED.md) - Step-by-step beginner guide
 - [Setup Guide](SETUP.md) - Detailed installation and configuration
@@ -69,7 +69,7 @@ See [SETUP.md](SETUP.md) for detailed manual installation instructions.
 - [Contributing Guide](CONTRIBUTING.md) - How to contribute
 - [Changelog](CHANGELOG.md) - Version history and updates
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework**: Next.js 14 (App Router)
@@ -95,7 +95,7 @@ See [SETUP.md](SETUP.md) for detailed manual installation instructions.
 - **Development**: Hot reload for both frontend and backend
 - **Database**: PostgreSQL in Docker
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 job-tracker/
@@ -122,7 +122,7 @@ job-tracker/
 └── SETUP.md                     # Setup instructions
 ```
 
-## 🎯 Key Features Explained
+## Key Features Explained
 
 ### Application Management
 - Create, update, and delete job applications
@@ -150,7 +150,7 @@ job-tracker/
 - Interview scheduling notifications
 - Custom activity notes
 
-## 🔒 Security Features
+## Security Features
 
 - Password hashing with bcrypt
 - JWT token-based authentication
@@ -160,7 +160,7 @@ job-tracker/
 - Environment variable protection
 - SQL injection prevention (Prisma)
 
-## 🧪 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -185,7 +185,7 @@ job-tracker/
 
 See [API_DOCUMENTATION.md](API_DOCUMENTATION.md) for complete API reference.
 
-## 🌟 Future Enhancements
+## Future Enhancements
 
 - Email notifications for interviews
 - Calendar integration (Google Calendar, Outlook)
@@ -198,34 +198,34 @@ See [API_DOCUMENTATION.md](API_DOCUMENTATION.md) for complete API reference.
 
 See [FEATURES.md](FEATURES.md) for complete roadmap.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with modern web technologies
 - Inspired by the need for better job application tracking
 - Designed for developers, by developers
 
-## 📖 Additional Documentation
+## Additional Documentation
 
 - [Troubleshooting Guide](TROUBLESHOOTING.md) - Common issues and solutions
 - [Deployment Guide](DEPLOYMENT.md) - Production deployment instructions
 - [Changelog](CHANGELOG.md) - Version history and updates
 
-## 📧 Support
+## Support
 
 For questions or issues:
 - Check [Troubleshooting Guide](TROUBLESHOOTING.md)
 - Review [Documentation](#-documentation)
 - Open an issue on GitHub
 
-## 🚀 Deployment
+## Deployment
 
 ### Frontend (Vercel)
 ```bash
@@ -250,6 +250,6 @@ Use managed PostgreSQL services:
 
 ---
 
-**Happy Job Hunting! 🎉**
+**Happy Job Hunting!**
 
-Made with ❤️ for job seekers everywhere
+Made with love for job seekers everywhere
