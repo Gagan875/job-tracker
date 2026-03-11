@@ -1,16 +1,17 @@
-services:
-  # PostgreSQL Database
-  - type: pserv
-    name: job-tracker-db
+databases:
+  - name: job-tracker-db
+    databaseName: job_tracker
+    user: job_tracker_user
     plan: free
 
+services:
   # Backend Service
   - type: web
     name: job-tracker-backend
-    runtime: node
+    env: node
     plan: free
     rootDir: ./server
-    buildCommand: npm install && npx prisma generate && npm run build
+    buildCommand: npm install && DATABASE_URL=postgresql://temp:temp@temp:5432/temp npx prisma generate && npm run build
     startCommand: npx prisma migrate deploy && npm start
     envVars:
       - key: DATABASE_URL
@@ -31,7 +32,7 @@ services:
   # Frontend Service
   - type: web
     name: job-tracker-frontend
-    runtime: node
+    env: node
     plan: free
     rootDir: ./client
     buildCommand: npm install && npm run build
